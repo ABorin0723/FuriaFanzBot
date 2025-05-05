@@ -97,4 +97,4 @@ database.db
 Este projeto é livre para uso educacional e pessoal. Sinta-se à vontade para modificar e expandir.
 
 🙋‍♂️ Autor
-Feito por Seu Nome com carinho e amor pela FURIA 🖤
+Feito por ABorin com carinho e amor pela FURIA 🖤
