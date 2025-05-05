@@ -11,7 +11,7 @@ Um bot de Telegram criado para fãs do time de CS:GO da FURIA, oferecendo uma ex
 - `/news` – Últimas notícias sobre a equipe
 - `/quiz` – Inicia um quiz sobre a FURIA
 - `/torcida` – Envia mensagens de torcida personalizadas
-- `/profile` – Ainda n]ao funciona
+- `/profile` – Ainda não funciona
 - `/store` - Ainda não funciona
 
 ---
