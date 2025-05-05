@@ -1,3 +1,4 @@
+
 # 🤖 FURIA Bot – Telegram Fan Experience
 
 Um bot de Telegram criado para fãs do time de CS:GO da FURIA, oferecendo uma experiência completa de interação com o time, incluindo notícias, jogos ao vivo, torcida interativa e quizzes personalizados.
@@ -6,96 +7,128 @@ Um bot de Telegram criado para fãs do time de CS:GO da FURIA, oferecendo uma ex
 
 ## 🚀 Funcionalidades
 
-- `/start` – Mensagem de boas-vindas e menu interativo com botões
-- `/live` – Mostra jogos ao vivo ou os próximos da FURIA
-- `/news` – Últimas notícias sobre a equipe
-- `/quiz` – Inicia um quiz sobre a FURIA
-- `/torcida` – Envia mensagens de torcida personalizadas
-- `/profile` – Ainda não funciona
-- `/store` - Ainda não funciona
+- `/start` – Mensagem de boas-vindas e menu interativo com botões  
+- `/live` – Mostra jogos ao vivo ou os próximos da FURIA  
+- `/news` – Últimas notícias sobre a equipe  
+- `/quiz` – Inicia um quiz sobre a FURIA  
+- `/torcida` – Envia mensagens de torcida personalizadas  
+- `/profile` – Ainda não funciona  
+- `/store` - Ainda não funciona  
 
 ---
 
 ## 🧰 Tecnologias Utilizadas
 
-- Python 3.11+
-- [python-telegram-bot](https://github.com/python-telegram-bot/python-telegram-bot)
-- SQLite (banco de dados local)
-- [hltv_async_api](https://pypi.org/project/hltv-async-api/) – para jogos ao vivo
-- `.env` para variáveis de ambiente
+- Python 3.11+  
+- [python-telegram-bot](https://github.com/python-telegram-bot/python-telegram-bot)  
+- SQLite (banco de dados local)  
+- [hltv_async_api](https://pypi.org/project/hltv-async-api/) – para jogos ao vivo  
+- `.env` para variáveis de ambiente  
 
 ---
 
-## 🛠️ Instalação e Execução
+## 📦 Instalação
 
-1. **Clone o projeto**
+1. **Clone o repositório:**
 
 ```bash
-git clone https://github.com/seu-usuario/furiabot.git
-cd furiabot
-(Opcional) Crie um ambiente virtual
+git clone https://github.com/seu-usuario/furia-bot.git
+cd furia-bot
+```
 
-bash
-Copy
-Edit
+2. **Crie e ative um ambiente virtual (opcional, mas recomendado):**
+
+```bash
 python -m venv venv
-venv\Scripts\activate   # Windows
-# source venv/bin/activate   # Linux/macOS
-Instale as dependências
+venv\Scripts ctivate  # No Windows
+# ou
+source venv/bin/activate  # No Linux/macOS
+```
 
-bash
-Copy
-Edit
+3. **Instale as dependências:**
+
+```bash
 pip install -r requirements.txt
-Crie o arquivo .env
+```
 
-Crie um arquivo chamado .env na raiz do projeto com o seguinte conteúdo:
+> Obs: caso utilize funcionalidades com `JobQueue`, você pode instalar com:
+```bash
+pip install "python-telegram-bot[job-queue]"
+```
 
-env
-Copy
-Edit
-BOT_TOKEN=SEU_TOKEN_DO_BOT_AQUI
-Rode o bot
+4. **Configure o arquivo `.env`:**
 
-bash
-Copy
-Edit
+Crie um arquivo `.env` na raiz do projeto com o seguinte conteúdo:
+
+```env
+BOT_TOKEN=SEU_TOKEN_AQUI
+```
+
+Substitua `SEU_TOKEN_AQUI` pelo token do seu bot gerado com o [BotFather](https://t.me/BotFather).
+
+---
+
+## 🧠 Banco de Dados
+
+O banco de dados é criado automaticamente ao iniciar o bot. Ele utiliza SQLite (`database.db`) e armazena perfis de usuários e pontuações do quiz.
+
+---
+
+## ▶️ Como Rodar
+
+Após configurar o `.env` e instalar as dependências:
+
+```bash
 python main.py
-🗂️ Estrutura do Projeto
-bash
-Copy
-Edit
-furiabot/
+```
+
+O terminal ficará “parado”, aguardando mensagens no Telegram. Isso significa que o bot está **rodando**.
+
+---
+
+## 📱 Interagindo com o Bot
+
+1. Abra o Telegram.  
+2. Acesse o seu bot através do link: `https://t.me/seu_bot_username` (substitua pelo seu @).  
+3. Use comandos como `/start`, `/quiz`, `/news`, etc.
+
+---
+
+## 🛠️ Estrutura do Projeto
+
+```
+furia-bot/
 │
-├── handlers/             # Módulos separados por funcionalidade
+├── handlers/             # Comandos e lógica por funcionalidade
 │   ├── live.py
 │   ├── news.py
-│   ├── profile.py
 │   ├── quiz.py
-│   └── torcida.py
+│   ├── torcida.py
+│   ├── profile.py
+│   └── store.py
 │
-├── db.py                 # Setup e interação com banco de dados
-├── main.py               # Inicializa o bot e registra os comandos
-├── .env                  # Token do bot (NÃO SUBIR para o GitHub)
-├── .gitignore
-└── requirements.txt      # Dependências do projeto
-🛑 Segurança
-Adicione o arquivo .env ao seu .gitignore
+├── database.db           # Banco de dados SQLite (gerado automaticamente)
+├── db.py                 # Funções de manipulação do banco
+├── main.py               # Arquivo principal do bot
+├── .env                  # Token do bot (não subir para o GitHub)
+├── requirements.txt      # Dependências do projeto
+└── README.md             # Documentação do projeto
+```
 
-Nunca suba seu token do bot para o GitHub
+---
 
-Exemplo de .gitignore:
+## 💡 To-Do (Melhorias Futuras)
 
-gitignore
-Copy
-Edit
-.env
-venv/
-__pycache__/
-*.pyc
-database.db
-📄 Licença
-Este projeto é livre para uso educacional e pessoal. Sinta-se à vontade para modificar e expandir.
+- [ ] Ativar e finalizar `/profile` com ranking e edições  
+- [ ] Finalizar `/store` com interações e compras fictícias  
+- [ ] Criar painel web para estatísticas dos usuários  
+- [ ] Incluir sistema de pontuação e recompensas  
+
+---
+
+## 🏁 Licença
+
+Este projeto é de uso educacional e sem fins lucrativos. Sinta-se à vontade para adaptar, reutilizar e compartilhar.
 
 🙋‍♂️ Autor
 Feito por ABorin com carinho e amor pela FURIA 🖤
